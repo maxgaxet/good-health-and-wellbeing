@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta <!charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive health landing page</title>
+    <!-- Box Icons -->
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!-- Link To CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  /* Google Fonts */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    list-style: none;
+    text-decoration: none;
+  }
+  *::selection {
+    background: var(--main-color);
+    color: #fff;
+  }
+  :root {
+    --main-color:  #0000FF;
+    --text-color: #1e1c2a;
+    --bg-color: #fff;
+
+    --big-font: 4rem;
+    --h2-font: 2.24rem;
+    --p-font: 0.9rem;
+  }
+  section {
+    padding: 50px 10%;
+  }
+  body.active {
+    --bg-color: #1e1c2a;
+    --text-color: #fff;
+  }
+  body {
+    color: var(--text-color);
+    background: var(--bg-color);
+  }
+  #darkmode {
+    font-size: 25px;
+    cursor: pointer;
+  }
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-color);
+    padding: 18px 100px;
+    box-shadow: 0 0.5rem 50rem rgba(0, 0, 0, 0.1);
+  }
+  .logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--main-color);
+  }
+  .navbar {
+    display: flex;
+  }
+  .navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+  }
+  .navbar a:hover {
+    color: var(--main-color);
+  }
+  #menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+  }
+  .home {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .home-img img {
+    width: 100%;
+	height:700px;
+  }
+  .home-text h1 {
+    font-size: var(--big-font);
+    color: var(--main-color);
+  }
+  .home-text h2 {
+    font-size: var(--h2-font);
+    margin: 1rem 0 1rem;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+    color: #fff;
+  }
+  .btn:hover {
+    background: #ffa400;
+  }
+  .about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .about-img img {
+    max-width: 80%;
+    border-radius: 0.5rem;
+  }
+  .about-text span {
+    color: var(--main-color);
+    font-weight: 500;
+  }
+  .about-text h2 {
+    font-size: var(--h2-font);
+  }
+  .about-text p {
+    margin: 0.8rem 0 1.8rem;
+  }
+  .heading {
+    text-align: center;
+  }
+  .heading span {
+    color: var(--main-color);
+    font-weight: 500;
+  }
+  .heading h2 {
+    font-size: var(--h2-font);
+  }
+  .menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .box {
+    position: relative;
+    margin-top: 2rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgb(4 64 54 / 10%);
+    padding: 10px;
+  }
+  .box-img {
+    width: 400px;
+    height: 400px;
+  }
+  .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .box h2 {
+    font-size: 1.2rem;
+  }
+  .box h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 4px 0 10px;
+  }
+  .box span {
+    font-size: var(--p-font);
+    font-weight: 500;
+  }
+  .box .bx {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    background: var(--main-color);
+    border-radius: 0 0.5rem 0 0.5rem;
+    padding: 5px 8px;
+  }
+  .box .bx:hover {
+    background: #ffa400;
+  }
+  .servives-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .s-box {
+    text-align: center;
+  }
+  .s-box img {
+    width: 300px;
+	height:300px;
+  }
+  .s-box h3 {
+    margin: 4px 0 10px;
+  }
+  .connect {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .connect-text span {
+    color: var(--main-color);
+    font-weight: 500;
+  }
+  .connect-text h2 {
+    font-size: var(--h2-font);
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 1.5rem;
+  }
+  .contact-box h3 {
+    margin-bottom: 1rem;
+  }
+  .social {
+    display: flex;
+    margin-top: 1.5rem;
+  }
+  .social i {
+    font-size: 20px;
+    margin-right: 1rem;
+    color: var(--text-color);
+  }
+  .social i:hover {
+    color: var(--main-color);
+  }
+  .contact-box li a {
+    color: var(--text-color);
+  }
+  .contact-box li a:hover {
+    color: var(--main-color);
+  }
+  .address {
+    display: flex;
+    flex-direction: column;
+  }
+  .address i {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .address span {
+    margin-left: 1rem;
+  }
+  .copyright {
+    padding: 20px;
+    text-align: center;
+  }
+  @media (max-width: 921px) {
+    header {
+      padding: 14px 41px;
+    }
+    :root {
+      --big-font: 3rem;
+      --h2-font: 1.7rem;
+    }
+  }
+  @media (max-width: 768px) {
+    section {
+      padding: 50px 8%;
+    }
+    #menu-icon {
+      display: initial;
+      color: var(--text-color);
+    }
+    header .navbar {
+      position: absolute;
+      top: -400px;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background: var(--bg-color);
+      box-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+      transition: 0.2s ease;
+    }
+    .navbar.active {
+      top: 100%;
+    }
+    .navbar a {
+      padding: 1.5rem;
+      display: block;
+      background: var(--bg-color);
+    }
+    #darkmode {
+      position: absolute;
+      top: 1.4rem;
+      right: 2rem;
+    }
+  }
+  @media (max-width: 715px) {
+    header {
+      padding: 10px 16px;
+    }
+    .home {
+      grid-template-columns: 1fr;
+    }
+    .about {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .about-img {
+      order: 2;
+    }
+  }
+  @media (max-width: 515px) {
+    .connect {
+      flex-direction: column;
+    }
+    .connect .btn {
+      margin-top: 1rem;
+    }
+  }
+  @media (max-width: 450px) {
+    :root {
+      --big-font: 2rem;
+      --h2-font: 1.4rem;
+    }
+    .home-text {
+      padding-top: 4rem;
+    }
+  }
+  </style>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <a href="#" class="logo">Good Health & Wellbeing</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Routine">Routine</a></li>
+            <li><a href="#Maintain">Maintain</a></li>
+            
+            <!-- Dark Mode -->
+            
+        </ul>
+    </header>
+    <!-- Home  Section-->
+    <section class="home" id="home">
+        <div class="home-text">
+            <h1>HOW TO PREVENT OUR HEALTH?</h1>
+            <h2>"I have chosen to be happy because it is good for my health." <br>- Voltaire</h2>
+            
+        </div>
+        <div class="home-img">"
+            <img src="https://cdn.pixabay.com/photo/2018/07/07/16/24/happy-girl-3522428_1280.jpg" alt="">
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="https://insights.ibx.com/wp-content/uploads/2023/12/doctor-patient-in-network.jpg" alt="">
+        </div>
+        <div class="about-text">
+            <span>About Us</span>
+            <h2>Good Health & Wellbeing</h2>
+            <p>Those who have no time for healthy eating will sooner or later have to find the time for illness!</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Routine -->
+    <section class="menu" id="menu">
+        <div class="heading">
+            <span>Routine</span>
+            <h2>Daily Routine Of The Week</h2>
+        </div>
+        <div class="menu-container">
+            <!-- Box 1 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://khni.kerry.com/wp-content/uploads/2017/09/shutterstock_224737129-1024x683.jpg" alt="">
+                </div>
+                <h2>HEALTHY DIET</h2>
+                <h3>Consume a balanced diet rich in fruits, vegetables, whole grains, and lean proteins.</h3>
+				<h3>Follow These Steps:</h3>
+				<h2>Portion Control:</h2>
+
+<h3>Be mindful of portion sizes to avoid overeating. Use smaller plates, bowls, and utensils to help control portions.</h3><h2>Balanced Meals:</h2>
+
+<h3>Aim for balanced meals that include a combination of carbohydrates, proteins, and fats. This helps provide sustained energy throughout the day.</h3><h2>Mindful Eating:</h2>
+
+<h3>Pay attention to your body's hunger and fullness cues. Eat slowly, savor your food, and avoid distractions like TV or electronic devices.</h3><h2>Listen to Your Body:</h2>
+
+<h3>.Pay attention to how different foods make you feel. Adjust your diet based on what makes you feel energized and satisfied.</h3><h2>Consult a Professional:</h2>
+
+<h3>If you have specific health concerns or dietary needs, consider consulting with a registered dietitian or healthcare professional for personalized advice.</h3>
+                
+                
+            </div>
+            <!-- Box 2 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://integrityuc.com/wp-content/uploads/2022/07/8-Benefits-of-Regular-Exercise-.jpeg" alt="">
+                </div>
+                <h2>REGULAR EXERCISE</h2>
+                <h3>Incorporate regular physical activity into your routine to support cardiovascular health, strength, and flexibility.</h3>
+				<h3>Follow These Steps:</h3>
+				<h2>Create a Schedule:</h2>
+
+<h3>Set aside specific times for your workouts. Treat them like appointments that cannot be missed. Consistency is key to building a habit.</h3><h2>Set Realistic Goals:</h2>
+
+<h3>Define clear and achievable fitness goals. Whether it's weight loss, muscle gain, improved endurance, or overall health, having specific objectives can keep you motivated.</h3><h2>Start Slowly:</h2>
+
+<h3>If you're new to exercise or returning after a break, start with low-intensity activities. Gradually increase the intensity and duration as your fitness level improves.</h3><h2>Stay Hydrated:</h2>
+
+<h3>Drink water before, during, and after your workout to stay hydrated. Dehydration can negatively impact your performance and recovery.</h3><h2>Track Your Progress</h2>
+
+<h3>Keep a record of your workouts, noting the type, duration, and intensity. Tracking progress can be motivating and help you make necessary adjustments to your routine.</h3>
+                
+                
+            </div>
+            <!-- Box 3 -->
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://www.health.com/thmb/7OF0KABFinSIsBJA4-HvinPIAYA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1169634838-6ac7a060d8b64a53b442b71711d912ef.jpg" alt="">
+                </div>
+                <h2>ADEQUATE SLEEP </h2>
+                <h3>Aim for 7-9 hours of quality sleep per night to support overall well-being and cognitive function.</h3>
+                <h3>Follow These Steps:</h3>
+				<h2>Sleep Schedule:</h2>
+
+<h3>Go to bed and wake up at the same time every day, even on weekends. This helps regulate your body's internal clock.</h3><h2>Sleep Environment:</h2>
+
+<h3>Make your bedroom conducive to sleep by keeping it cool, dark, and quiet. Invest in a comfortable mattress and pillows that support good sleep posture.</h3><h2>Exposure to Screens:</h2>
+
+<h3>Reduce exposure to electronic devices like phones, tablets, and computers at least 30 minutes before bedtime.</h3><h2>Manage Stress:</h2>
+
+<h3>Practice stress-reducing techniques such as deep breathing, meditation, or progressive muscle relaxation to help calm your mind before bedtime.</h3><h2>Sleep Disorders:</h2>
+
+<h3>If you suspect you have a sleep disorder such as insomnia or sleep apnea, seek professional help. Consult with a healthcare provider or sleep specialist to address any underlying issues.</h3>
+                
+            
+        </div>
+    </section>
+
+    <!-- Service -->
+    <section class="services" id="services">
+        <div class="heading">
+            <span>Maintain</span>
+            <h2>To Maintain Our Well Being</h2>
+        </div>
+
+        <div class="servives-container">
+            <!-- Box 1 -->
+            <div class="s-box">
+                <img src="https://balance.media/wp-content/uploads/2021/05/shutterstock_403614322.jpg" alt="">
+                <h3>Connect with Nature:</h3>
+                <p>Spend time outdoors and connect with nature. Enjoying the natural environment can have positive effects on your mental and emotional well-being.</p>
+            </div>
+            <!-- Box 2 -->
+            <div class="s-box">
+                <img src="https://www.betterup.com/hs-fs/hubfs/Woman-sketching-a-business-plan-how-to-set-realistic-goals.jpg?width=2120&name=Woman-sketching-a-business-plan-how-to-set-realistic-goals.jpgs" alt="">
+                <h3>Set Realistic Goals:</h3>
+                <p>Establish achievable goals for personal and professional growth. Break them down into smaller, manageable tasks to maintain motivation and a sense of accomplishment.</p>
+            </div>
+            <!-- Box 3 -->
+            <div class="s-box">
+                <img src="https://st4.depositphotos.com/2712843/31615/i/450/depositphotos_316159472-stock-photo-closeup-asian-young-student-hand.jpg" alt="">
+                <h3>Continuous Learning:</h3>
+                <p>Stimulate your mind by engaging in continuous learning. This can include reading, taking courses, attending workshops, or pursuing hobbies that challenge your intellect.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    
+
+
+ 
+</body>
+</html>
